@@ -8,10 +8,8 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import {Loader} from './Loader/Loader';
 import {Button} from './Button/Button';
 import {Modal} from './Modal/Modal';
+import {Container} from './app.styled';
 
-
-// var Scroll = require('react-scroll');
-// var scroll = Scroll.animateScroll;
 
 class App extends Component{
 state={
@@ -98,7 +96,7 @@ componentWillUnmount() {
     this.setState(prevState => ({
       page: prevState.page + 1,
     }));
-    // scroll.scrollToBottom();
+
   };
 
   onClickClose = () => {
@@ -126,7 +124,7 @@ componentWillUnmount() {
     const {isLoading, showBtn, showModal, images, largeImageURL, tags, error} = this.state;
     
     return(
-      <div>
+      <Container>
         <ToastContainer 
         position="top-right"
         toastOptions={{
@@ -147,7 +145,7 @@ componentWillUnmount() {
           />
         )}
         {error && <Error />}
-      </div>
+      </Container>
     )
   }
 }
